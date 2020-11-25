@@ -18,8 +18,8 @@ class App {
 			logging: true,
 		});
 
-		const fooId = Buffer.from(uuidv4(), 'utf8');
-
+		const fooId = Buffer.from(uuidv4().replace(/-/g,''), 'hex');
+		
 		// Inserting Foo
 		await getConnection().transaction(async transactionalEntityManager => {
 			const fooRepository = getRepository(Foo);
