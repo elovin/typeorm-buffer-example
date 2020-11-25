@@ -4,13 +4,13 @@ import { Foo } from "./Foo.model";
 
 @Entity()
 export class Bar {
-    @PrimaryColumn({ name: "uuid", type: "binary", length: 36 })
+    @PrimaryColumn({ name: "uuid", type: "binary", length: 16 })
     id!: Buffer;
 
     @Column()
 	name!: string;
 
-	@Column({ name: "foo_id", type: "binary", length: 36 })
+	@Column({ name: "foo_id", type: "binary", length: 16 })
 	fooId!: Buffer;
 
     @OneToOne(() => Foo, foo => foo.Bar)
