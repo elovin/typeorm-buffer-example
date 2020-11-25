@@ -58,7 +58,7 @@ class App {
 
 			const barRepository = getRepository(Bar);
 			const bar = barRepository.create({
-				id: Buffer.from(uuidv4(), 'utf8'),
+				id: Buffer.from(uuidv4().replace(/-/g,''), 'hex'),
 				name: "Bar v1",
 				Foo: foo,
 			});
